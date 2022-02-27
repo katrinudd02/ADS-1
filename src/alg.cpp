@@ -5,6 +5,7 @@
 //проверка числа на простоту
 bool checkPrime(uint64_t value) {
     bool flag = true;
+    if (value < 2) flag = false;
     int k = 2;
     while (k * k <= value && flag) {
         if (value % k == 0)
