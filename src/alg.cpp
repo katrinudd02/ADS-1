@@ -28,9 +28,7 @@ bool checkPrime(uint64_t value) {
 //нахождение n-ого простого числа (в ряду)
 uint64_t nPrime(uint64_t n) {
 
-    const int size = 1000000; 
-    int* arr;
-    arr = new int[size];
+    const int size = 1000000;
     int h = 0;
 
     int arr[size];
@@ -72,5 +70,4 @@ uint64_t sumPrime(uint64_t hbound) {
     }
 
     return summ;
-
 }
