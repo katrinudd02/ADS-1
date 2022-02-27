@@ -4,11 +4,12 @@
 
 //проверка числа на простоту
 bool checkPrime(uint64_t value) {
-    bool flag = false;
-    if (((value % 2 != 0) && (value % 3 != 0) && (value % 5 != 0) \
-        && (value % 7 != 0) && (value != 1) && (value != 0)) \
-        || (value == 2) || (value == 3) || (value == 5) || (value == 7)) {
-        flag = true;
+    bool flag = true;
+    int k = 2;
+    while (k * k <= value && flag) {
+        if (value % k == 0)
+            flag = false;
+        k++;
     }
     return flag;
 }
