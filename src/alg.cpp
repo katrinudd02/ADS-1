@@ -1,15 +1,13 @@
-#include <iostream>
+// Copyright 2022 NNTU-CS
 #include <cstdint>
 #include "alg.h"
-
-using namespace std;
 
 //проверка числа на простоту
 bool checkPrime(uint64_t value) {
     bool flag = false;
     if (((value % 2 != 0) && (value % 3 != 0) && (value % 5 != 0) \
-         && (value % 7 != 0) && (value != 1) && (value !=0 )) \
-         || (value == 2) || (value == 3) || (value == 5) || (value == 7)) {
+        && (value % 7 != 0) && (value != 1) && (value != 0)) \
+        || (value == 2) || (value == 3) || (value == 5) || (value == 7)) {
         flag = true;
     }
     return flag;
@@ -19,8 +17,7 @@ bool checkPrime(uint64_t value) {
 uint64_t nPrime(uint64_t n) {
     uint64_t i = 0;
     while (n > 0) {
-        while (!checkPrime(i)) {
-            i++;
+        while (!checkPrime(++i)) {
         }
         n--;
     }
@@ -30,9 +27,8 @@ uint64_t nPrime(uint64_t n) {
 //нахождение ближайшего следующего простого числа
 uint64_t nextPrime(uint64_t value) {
     uint64_t i;
-    i = value + 1;
-    while (!checkPrime(i)) {
-        i++;
+    i = value;
+    while (!checkPrime(++i)) {
     }
 
     return i;
