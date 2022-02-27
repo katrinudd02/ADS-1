@@ -11,11 +11,11 @@ bool checkPrime(uint64_t value) {
         return false;
     }
 
-    else if ((value == 2) or (value==3) or (value==5) or(value==7)) {
+    else if ((value == 2) || (value==3) || (value==5) || (value==7)) {
         return true;
     }
 
-    else if ((value % 2 == 0) or (value%3==0) or (value%5==0) or (value%7==0)) {
+    else if ((value % 2 == 0) || (value%3==0) || (value%5==0) || (value%7==0)) {
         return false;
     }
 
@@ -31,9 +31,9 @@ uint64_t nPrime(uint64_t n) {
     const int size = 1000000;
     int h = 0;
 
-    int arr[size];
+    uint64_t arr[size];
     for (int i = 0; i < size; i++) {
-        if (((i % 2 != 0) and (i % 3 != 0) and (i % 5 != 0) and (i % 7 != 0)) or ((i == 2) or (i == 3) or (i == 5) or (i == 7))){
+        if (((i % 2 != 0) && (i % 3 != 0) && (i % 5 != 0) && (i % 7 != 0)) || ((i == 2) || (i == 3) || (i == 5) || (i == 7))){
             arr[h++] = i;
         }
     }
@@ -45,29 +45,31 @@ uint64_t nPrime(uint64_t n) {
 uint64_t nextPrime(uint64_t value) {
 
     int size = 1000000;
+    uint64_t res;
     
     for (int i = value+1; i < size; i++) {
-        if (((i % 2 != 0) and (i % 3 != 0) and (i % 5 != 0) and (i % 7 != 0)) or ((i == 2) or (i == 3) or (i == 5) or (i == 7))) {
-            return i;
+        if (((i % 2 != 0) && (i % 3 != 0) && (i % 5 != 0) && (i % 7 != 0)) || ((i == 2) || (i == 3) || (i == 5) || (i == 7))) {
+            res = (uint64_t)i;
             break;
         }
         else {
             continue;
         }
     }
-    
+    return res;
 }
 
 //сумма всех чисел до hbound (не включая его)
 uint64_t sumPrime(uint64_t hbound) {
 
-    int summ = 0;
+    uint64_t summ = 0;
 
     for (int i = 0; i < hbound; i++) {
-        if (((i % 2 != 0) and (i % 3 != 0) and (i % 5 != 0) and (i % 7 != 0)) or ((i == 2) or (i == 3) or (i == 5) or (i == 7))) {
-            summ += i;
+        if (((i % 2 != 0) && (i % 3 != 0) && (i % 5 != 0) && (i % 7 != 0)) || ((i == 2) || (i == 3) || (i == 5) || (i == 7))) {
+            summ += (uint64_t)i;
         }
     }
 
     return summ;
+
 }
